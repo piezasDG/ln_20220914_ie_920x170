@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Prisma</title>
+	<meta name="ad.size" content="width=920,height=170">
+	<meta name="old.GCD" content=""/>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,500;1,400;1,500&display=swap');
+		body{
+			margin: 0;
+		}
+		#bannerAnimado{
+			width:920px; height: 170px; background-color: #FFFFFF; margin: 0 auto; position: relative; overflow: hidden; font-family: 'Rubik', sans-serif; font-style: italic; font-weight: 400; background: url(bg.jpg) no-repeat center; background-size: cover; color: white;
+		}
+		#borde{
+			width: calc(100% - 2px); height: calc(100% - 2px); border: 1px solid #CCCCCC; position: absolute;top: 0; left: 0; z-index: 100; cursor: pointer;
+		}
+		#halo{
+			width: inherit;
+		    height: inherit;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    z-index: 90; 
+		}
+		#halo svg {
+			display: block;
+			margin: 0 auto;
+			position: relative;
+			top: 0;
+			left: 280px;
+		}
+		#cuadro1{
+			width: 450px;
+			position: absolute; 
+			top:40px; 
+			left: 5%;
+			z-index: 0;
+			padding: 20px;
+			background: rgb(2,62,133);
+			background: linear-gradient(90deg, rgba(2,62,133,0.8884147408963585) 0%, rgba(2,62,133,0.5354735644257703) 100%);
+			font-size: 22px; line-height: 27px; display: flex; 
+			align-items: center; 
+			justify-content: center;
+			
+			-webkit-border-top-right-radius: 20px;
+			-webkit-border-bottom-left-radius: 20px;
+			-moz-border-radius-topright: 20px;
+			-moz-border-radius-bottomleft: 20px;
+			border-top-right-radius: 20px;
+			border-bottom-left-radius: 20px;
+
+			animation-delay: 3s;
+
+			-webkit-animation: fadeOut 1s ease 3s 1 forwards;
+			   -moz-animation: fadeOut 1s ease 3s 1 forwards;
+			        animation: fadeOut 1s ease 3s 1 forwards; 
+
+		}
+		#logo{
+			position: absolute; 
+			bottom: 0; 
+			left: 0;
+			z-index: 0;
+			width: inherit; height: inherit; 
+			background: url(logo.png) no-repeat center right;
+			background-size: 32%;
+
+		}
+		#logobg{
+			width: 310px;
+			height: 100%;
+			background: rgb(0,71,140);
+			background: linear-gradient(180deg, rgba(0,71,140,1) 0%, rgba(2,62,133,1) 100%);
+			position: absolute; 
+			bottom: 0; 
+			right: 0;
+		}
+		#items{
+			position: absolute; 
+			bottom: -32px; 
+			left: 5%;
+			z-index: 0;
+			opacity: 0;
+			width: 56%; height: inherit; 
+
+			background: url(items.png) no-repeat center 10px;
+			background-size: contain;
+
+			-webkit-animation: fadeIn 1s ease 3s 1 forwards;
+			   -moz-animation: fadeIn 1s ease 3s 1 forwards;
+			        animation: fadeIn 1s ease 3s 1 forwards; 
+
+
+		}
+		#placa{
+			position: absolute; 
+			bottom: 0; 
+			left: 0;
+			z-index: 0;
+			opacity: 0;
+			width: inherit; height: inherit; 
+			background: rgb(0,71,140);
+			background: linear-gradient(180deg, rgba(0,71,140,1) 0%, rgba(2,62,133,1) 100%);
+
+			-webkit-animation: fadeIn 1s ease 7s 1 forwards;
+			   -moz-animation: fadeIn 1s ease 7s 1 forwards;
+			        animation: fadeIn 1s ease 7s 1 forwards; 
+		}
+		#logo2{
+			position: absolute; 
+			bottom: 0; 
+			left: 0;
+			z-index: 0;
+			opacity: 0;
+			width: inherit; height: inherit; 
+			background: url(logo2.png) no-repeat 180px 24px;
+
+
+			-webkit-animation: fadeIn 1s ease 7s 1 forwards;
+			   -moz-animation: fadeIn 1s ease 7s 1 forwards;
+			        animation: fadeIn 1s ease 7s 1 forwards; 
+		}
+		#txt{
+			position: absolute; 
+			top: 270px; 
+			left: 0;
+			z-index: 0;
+			opacity: 0;
+			width: inherit; 
+			font-style: normal;
+			font-weight: 300;
+			font-size: 37px;
+			text-align: center;
+
+			-webkit-animation: fadeIn 1s ease 7s 1 forwards;
+			   -moz-animation: fadeIn 1s ease 7s 1 forwards;
+			        animation: fadeIn 1s ease 7s 1 forwards; 
+		}
+		#boton{
+			background-color: #00B5B6; 
+			width:160px; 
+			height: 38px;
+			line-height: 38px;  
+			text-align: center; 
+			font-size: 18px; 
+			top: calc(50% - 38px/2);
+			right: 7%; 
+			position: absolute; 
+			border-radius: 30px;
+			opacity: 0;
+			font-style: normal;
+			font-weight: 500;
+
+			-webkit-animation: fadeIn 1s ease 7s 1 forwards;
+			   -moz-animation: fadeIn 1s ease 7s 1 forwards;
+			        animation: fadeIn 1s ease 7s 1 forwards; 
+		}
+
+		@-webkit-keyframes fadeIn{ 0%{opacity:0;} 100%{opacity:1;}}
+		   @-moz-keyframes fadeIn{ 0%{opacity:0;} 100%{opacity:1;}}
+		        @keyframes fadeIn{ 0%{opacity:0;} 100%{opacity:1;}}
+
+		@-webkit-keyframes fadeOut{ 0%{opacity:1;} 100%{opacity:0;}}
+		   @-moz-keyframes fadeOut{ 0%{opacity:1;} 100%{opacity:0;}}
+		        @keyframes fadeOut{ 0%{opacity:1;} 100%{opacity:0;}}
+
+
+	</style>
+</head>
+<body>
+	<div id="bannerAnimado">
+		<div id="borde"></div>
+		<div id="logobg"></div>
+		<div id="logo"></div>
+		<div id="halo">
+			<svg width="300px" height="195px">
+			    <defs>  
+			        <linearGradient id="halo-gradient" y1="50%" y2="50%" y3="50%" y4="50%" gradientTransform="rotate(90)"> 
+           
+			            <stop offset="0%" stop-color="#00b1b5">
+			                <animate attributeName="stop-color" values="#00b1b5; #1d4484; #e61d55; #ffd600; #e61d55; #1d4484; #00b1b5;" dur="6s" repeatCount="3"></animate>
+			            </stop>
+
+						<stop offset="20%" stop-color="#1d4484">
+			                <animate attributeName="stop-color" values="#1d4484; #e61d55; #ffd600; #e61d55; #1d4484; #00b1b5; #1d4484" dur="6s" repeatCount="3"></animate>
+			            </stop>
+
+						<stop offset="40%" stop-color="#e61d55">
+			                <animate attributeName="stop-color" values="#e61d55; #ffd600; #e61d55; #1d4484; #00b1b5; #1d4484; #e61d55;" dur="6s" repeatCount="3"></animate>
+			            </stop>
+
+						<stop offset="60%" stop-color="#ffd600">
+			                <animate attributeName="stop-color" values="#ffd600; #e61d55; #1d4484; #00b1b5; #1d4484; #e61d55; #ffd600;" dur="6s" repeatCount="3"></animate>
+			            </stop>
+
+						<stop offset="80%" stop-color="#e61d55">
+			                <animate attributeName="stop-color" values="#e61d55; #1d4484; #00b1b5; #1d4484; #e61d55; #ffd600; #e61d55;" dur="6s" repeatCount="3"></animate>
+			            </stop>
+
+						<stop offset="90%" stop-color="#1d4484">
+			                <animate attributeName="stop-color" values="#1d4484; #00b1b5; #1d4484; #e61d55; #ffd600; #e61d55; #1d4484;" dur="6s" repeatCount="3"></animate>
+			            </stop>
+
+						<stop offset="100%" stop-color="#00b1b5">
+			                <animate attributeName="stop-color" values="#00b1b5; #1d4484; #e61d55; #ffd600; #e61d55; #1d4484; #00b1b5;" dur="6s" repeatCount="3"></animate>
+			            </stop>
+
+			        </linearGradient> 
+			    </defs>
+			    <g>
+			      <path fill="url('#halo-gradient')" d="M24.02,66.56c.31-7.84,2.08-11.23,5.6-17.99,.91-1.75,1.94-3.73,3.01-5.93,6.66-13.7,7.04-26.07,7.04-28.86,.06-1.8,.04-7.21-1.74-13.78H11.94c3.69,5.46,3.74,12.13,3.73,12.96l-.03,.22v.59c.01,.09,.02,8.86-4.61,18.38-.93,1.91-1.83,3.65-2.71,5.34C4.34,45.16,.56,52.4,.04,65.6c-.32,8.08,1.03,21.81,13.49,62.44,6.22,20.29,3.2,39.49-.17,51.53h24.78c3.41-15.15,5.22-36.13-1.66-58.57-8.59-28-12.78-46.32-12.46-54.45Z"></path>
+			    </g>
+			</svg>
+		</div>
+		<div id="cuadro1">
+			Soluciones para tu comercio  <br> que te solucionan la vida.
+		</div>
+		<div id="items"></div>
+		<div id="placa"></div>
+		<div id="logo2"></div>
+		<div id="boton">CONOC&Eacute; M&Aacute;S</div>
+	</div>
+
+	<div style = 'position: fixed; width: 100%; height: 100%; top: 0; overflow: hidden; z-index: 98;display: block; cursor:pointer' onclick="adcase_click()" ></div>
+	<script>function adcase_click() { window.top.postMessage({ msg: 'adcase_click', format:'html5' }, '*'); window.open(clickTag, '_blank')}</script>
+	<script>var clickTag = 'https://www.payway.com.ar/?utm_source=la_nacion&utm_medium=cpm&utm_campaign=dp_la_nacion_brand_awa_20220829_branding&utm_content=ie_desktop_html5_generico_920x170';</script>
+	<script data-exports-type='dclk-quick-preview'>if(typeof studio !== 'undefined' && studio.Enabler) { studio.Enabler.setRushSimulatedLocalEvents(true); }</script>
+</body>
+</html>
